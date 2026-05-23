@@ -56,7 +56,7 @@ In GitHub:
 ### 5) Wait for deploy workflow to finish
 This repository already includes `.github/workflows/deploy.yml`.
 On every push to `main`, it will:
-- install dependencies (`npm ci`)
+- install dependencies (`npm install`)
 - build the app (`npm run build`)
 - deploy `dist/` to GitHub Pages
 
