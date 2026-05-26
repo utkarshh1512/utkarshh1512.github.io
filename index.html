@@ -8,7 +8,11 @@
       name="description"
       content="Portfolio of Utkarsh - Associate Product Manager focused on 0→1 problem discovery, KPI-driven execution, and product growth."
     />
-  </head>
+    <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { colors: { slate: tailwind.colors.slate } } } }
+  </script>
+</head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
