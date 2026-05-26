@@ -1,7 +1,7 @@
 const contactItems = [
   { label: 'Phone', value: '+91 6387023383', icon: '📞', href: 'tel:+916387023383' },
   { label: 'Email', value: 'singhutkarsh6666@gmail.com', icon: '✉️', href: 'mailto:singhutkarsh6666@gmail.com' },
-  { label: 'LinkedIn', value: 'linkedin.com/in/utkarsh-singh', icon: '🔗', href: 'https://www.linkedin.com/in/utkarsh-singh/' },
+  { label: 'LinkedIn', value: 'LinkedIn, icon: '🔗', href: 'https://www.linkedin.com/in/utkarsh-547a821b3' },
   { label: 'Location', value: 'India', icon: '📍' }
 ];
 
@@ -44,7 +44,7 @@ function App() {
           <aside className="space-y-5">
             <div className="rounded-3xl border border-zinc-800 bg-zinc-900/85 p-6 shadow-[0_8px_40px_rgba(0,0,0,0.5)]">
               <div className="mx-auto h-40 w-40 overflow-hidden rounded-full border-4 border-red-500/45">
-                <img src="/assets/profile.jpg" alt="Utkarsh profile" className="h-full w-full object-cover" />
+                <img src="/assets/utkarsh_profile.jpg" alt="Utkarsh profile" className="h-full w-full object-cover" />
               </div>
               <h2 className="mt-5 text-2xl font-bold leading-tight">Hey there 👋, I&apos;m Utkarsh</h2>
               <p className="mt-2 text-sm font-medium text-zinc-300">Associate Product Manager | Product Owner | Technical Product Thinker</p>
