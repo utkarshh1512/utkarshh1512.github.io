@@ -1,7 +1,7 @@
 const contactItems = [
   { label: 'Phone', value: '+91 6387023383', icon: '📞', href: 'tel:+916387023383' },
   { label: 'Email', value: 'singhutkarsh6666@gmail.com', icon: '✉️', href: 'mailto:singhutkarsh6666@gmail.com' },
-  { label: 'LinkedIn', value: 'LinkedIn, icon: '🔗', href: 'https://www.linkedin.com/in/utkarsh-547a821b3' },
+  { label: 'LinkedIn', value: 'LinkedIn', icon: '🔗', href: 'https://www.linkedin.com/in/utkarsh-547a821b3' },
   { label: 'Location', value: 'India', icon: '📍' }
 ];
 
