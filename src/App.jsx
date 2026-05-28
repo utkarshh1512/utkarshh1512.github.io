@@ -34,6 +34,8 @@ const caseStudyDecks = [
 ];
 
 function App() {
+  const resumeUrl = `${import.meta.env.BASE_URL}assets/Utkarsh_Resume.pdf`;
+
   return (
     <div className="min-h-screen bg-[radial-gradient(circle_at_20%_10%,rgba(185,28,28,0.16),transparent_28%),radial-gradient(circle_at_78%_20%,rgba(153,27,27,0.12),transparent_35%),linear-gradient(160deg,#040405_0%,#0b0b0d_52%,#121218_100%)] text-zinc-100 antialiased">
       <main className="mx-auto max-w-7xl px-5 py-10 sm:px-8 lg:py-14">
@@ -66,7 +68,7 @@ function App() {
                   </div>
                 ))}
               </div>
-              <a href="/assets/Utkarsh_Resume.pdf" className="mt-4 inline-flex w-full items-center justify-center rounded-xl bg-gradient-to-r from-red-600 to-rose-500 px-4 py-3 text-sm font-semibold text-white hover:brightness-110">Download Resume</a>
+              <a href={resumeUrl} className="mt-4 inline-flex w-full items-center justify-center rounded-xl bg-gradient-to-r from-red-600 to-rose-500 px-4 py-3 text-sm font-semibold text-white hover:brightness-110">Download Resume</a>
             </div>
           </aside>
 
