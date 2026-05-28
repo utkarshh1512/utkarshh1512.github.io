@@ -1,4 +1,4 @@
-import profileImage from '../assets/utkarsh_profile.jpg';
+import profileImage from './assets/utkarsh_profile.jpg';
 
 const contactItems = [
   { label: 'Phone', value: '+91 6387023383', icon: '📞', href: 'tel:+916387023383' },
@@ -34,7 +34,7 @@ const caseStudyDecks = [
 ];
 
 function App() {
-  const resumeUrl = `${import.meta.env.BASE_URL}assets/Utkarsh_Resume.pdf`;
+  const resumeUrl = `${import.meta.env.BASE_URL}Utkarsh_Resume.pdf`;
 
   return (
     <div className="min-h-screen bg-[radial-gradient(circle_at_20%_10%,rgba(185,28,28,0.16),transparent_28%),radial-gradient(circle_at_78%_20%,rgba(153,27,27,0.12),transparent_35%),linear-gradient(160deg,#040405_0%,#0b0b0d_52%,#121218_100%)] text-zinc-100 antialiased">
