@@ -89,6 +89,34 @@ What matters for routing/assets is:
 
 ---
 
+
+## Console errors explained
+
+If the browser console shows errors like:
+- `Failed to load module script ... MIME type of "application/octet-stream"`
+- `GET .../assets/index-*.js 404`
+- `GET .../assets/index-*.css 404`
+
+that almost always means GitHub Pages is serving the repository root files instead of the built `dist/` output.
+
+### Why this happens
+- `index.html` in the repo root points to `/src/main.jsx` for local Vite development.
+- In production, GitHub Pages must publish the generated `dist/index.html`, which points to hashed files in `dist/assets/`.
+
+If Pages source is misconfigured, the browser loads source files directly, causing:
+- MIME type error for `main.jsx`
+- 404s for hashed assets
+- blank white screen
+
+### Fix
+1. Go to **Settings → Pages** and set **Source = GitHub Actions**.
+2. Push to `main` and wait for the **Deploy portfolio to GitHub Pages** workflow to finish.
+3. Open the exact `page_url` from the deploy job output.
+4. Hard refresh (`Ctrl/Cmd + Shift + R`).
+
+### About `cdn.tailwindcss.com` warning
+This is only a warning from Tailwind's CDN runtime script. It does **not** cause the blank screen by itself. The blank screen comes from JS/CSS asset load failures described above.
+
 ## Optional: Custom domain
 
 If you want a custom domain later:
