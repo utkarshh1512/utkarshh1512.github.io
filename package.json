@@ -16,5 +16,6 @@
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.1",
     "vite": "^5.4.10"
-  }
+  },
+  "description": "Personal developer portfolio built with React and Vite, optimized for GitHub Pages deployment."
 }

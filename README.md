@@ -1,6 +1,16 @@
 # Utkarsh Web Portfolio (React + Vite)
 
-A personal portfolio website built with React and optimized for GitHub Pages deployment.
+A modern single-page developer portfolio built with React and Vite, designed for fast load times and straightforward GitHub Pages deployment.
+
+## Project description
+
+This app is a personal portfolio website intended to showcase:
+- professional summary
+- technical skills
+- projects/work samples
+- contact and social links
+
+The frontend is powered by React, bundled with Vite, and configured to be hosted from a GitHub repository subpath (`/Utkarsh_Web_Portfolio/`).
 
 ## Run locally
 
@@ -13,104 +23,76 @@ npm run dev
 
 ```bash
 npm run build
+npm run preview
 ```
 
 ---
 
-## Deploy to GitHub Pages (Recommended: GitHub Actions)
+## Deploy to GitHub Pages (GitHub Actions)
 
-### 1) Update your GitHub username in `package.json`
-Replace:
+### 1) Verify repository and URL values
 
-```json
-"homepage": "https://<your-github-username>.github.io/Utkarsh_Web_Portfolio/"
-```
-
-with your actual username:
-
-```json
-"homepage": "https://YOUR_USERNAME.github.io/Utkarsh_Web_Portfolio/"
-```
-
-### 2) Keep Vite base path aligned to repo name
-In `vite.config.js`, keep:
+- Repository name should be exactly: `Utkarsh_Web_Portfolio`
+- Vite base path should be exactly:
 
 ```js
 base: '/Utkarsh_Web_Portfolio/'
 ```
 
-If your repository name changes, update this path to match.
+> The path is case-sensitive and must match your repository name exactly.
 
-### 3) Push this code to GitHub
-Push to your default branch (`main`):
+### 2) Set GitHub Pages source
+
+In GitHub:
+- Open **Settings → Pages**
+- Under **Build and deployment** set **Source = GitHub Actions**
+
+### 3) Push to `main`
 
 ```bash
 git push origin main
 ```
 
-### 4) Enable GitHub Pages
-In GitHub:
-- Go to **Repository → Settings → Pages**
-- Under **Build and deployment**, set **Source = GitHub Actions**
+### 4) Confirm deployment URL from workflow
 
-### 5) Wait for deploy workflow to finish
-This repository already includes `.github/workflows/deploy.yml`.
-On every push to `main`, it will:
-- install dependencies (`npm install`)
-- build the app (`npm run build`)
-- deploy `dist/` to GitHub Pages
+After the workflow succeeds:
+- Open **Actions → Deploy portfolio to GitHub Pages → latest run**
+- Open the **Deploy to GitHub Pages** job
+- Copy the `page_url` shown in job output/environment
 
-### 6) Open your portfolio link
-Your live site link will be:
-
-```text
-https://YOUR_USERNAME.github.io/Utkarsh_Web_Portfolio/
-```
-
-You can also find the exact live URL in:
-- **Actions tab** → latest "Deploy portfolio to GitHub Pages" run
-- or **Settings → Pages** after first successful deployment
+This URL is the canonical live URL GitHub generated for your deployment.
 
 ---
 
-## Optional: Use a custom domain (e.g., `utkarsh.dev`)
+## If workflow is green but site is not visible
 
-### A) Add a `CNAME` file
-Create `public/CNAME` with your domain:
+Use this checklist in order:
 
-```text
-utkarsh.dev
-```
-
-For `www`, use:
-
-```text
-www.utkarsh.dev
-```
-
-### B) Configure DNS at your domain provider
-- **Apex domain** (`utkarsh.dev`): add A records pointing to GitHub Pages IPs
-  - `185.199.108.153`
-  - `185.199.109.153`
-  - `185.199.110.153`
-  - `185.199.111.153`
-- **Subdomain** (`www.utkarsh.dev`): add `CNAME` to:
-  - `YOUR_USERNAME.github.io`
-
-### C) Enable custom domain in GitHub
-- Go to **Settings → Pages**
-- Enter your domain in **Custom domain**
-- Save and enable **Enforce HTTPS** after DNS propagates
+1. **Open the exact URL from the deploy job** (not a guessed URL).
+2. **Confirm Pages source is GitHub Actions** in Settings → Pages.
+3. **Confirm repo is public**, or if private, ensure your plan supports Pages for private repos.
+4. **Wait 2–10 minutes** after the first successful deployment (Pages propagation delay).
+5. **Hard refresh browser cache** (`Ctrl/Cmd + Shift + R`).
+6. **Check base path** in `vite.config.js` matches repository name exactly.
+7. **If using custom domain**, temporarily remove it in Settings → Pages and test the default `*.github.io` URL first.
 
 ---
 
-## Troubleshooting
+## About `homepage` in `package.json`
 
-- Blank page / broken assets:
-  - Confirm `base` in `vite.config.js` exactly matches repo name.
-- 404 on site:
-  - Confirm the workflow succeeded and Pages source is set to GitHub Actions.
-- Wrong URL:
-  - Confirm `homepage` in `package.json` uses the correct username and repo.
-- Custom domain not resolving:
-  - DNS propagation can take minutes to 24 hours.
+For this Vite + GitHub Actions setup, `homepage` is informational and not used by the build pipeline.
+
+What matters for routing/assets is:
+- `base` in `vite.config.js`
+- correct GitHub Pages settings
+- successful deploy job publishing `dist/`
+
+---
+
+## Optional: Custom domain
+
+If you want a custom domain later:
+- add `public/CNAME`
+- configure DNS records at your registrar
+- set domain in **Settings → Pages**
+- enable HTTPS after DNS propagation
